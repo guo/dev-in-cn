@@ -11,6 +11,12 @@ I would recommend using an AWS server in JP to host your traffic.
 On your local machine, you can use https://github.com/shadowsocks/ShadowsocksX-NG/releases to config your proxy. By default, you can use "Global mode" to proxy all your traffic. Configuration is also easy. Add a server in servers-> Server Preferences.
 You should be able to visit all website using your browser.
 
+a quick command to run shadowsocks docker
+```
+sudo docker run -e PASSWORD=[pw] -p [server-port]:8388 -p [server-port]:8388/udp  -d --restart always shadowsocks/shadowsocks-libev:latest
+```
+with default encryption method is aes-256-gcm.
+
 ## Shell access
 You can use `https_proxy` and `http_proxy` in your shell by `export them`:
 ```
